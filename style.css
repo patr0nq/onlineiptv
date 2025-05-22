@@ -568,5 +568,9 @@ body.playlist-visible .scroll-to-top.show {
          margin-bottom: 10px; /* Add space between button and input */
      }
 
-
+    .scroll-to-top:not(.show) {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
 }

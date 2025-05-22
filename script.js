@@ -43,7 +43,7 @@ scrollToTopButton.addEventListener('click', () => {
 });
 
 playlistContainer.addEventListener('scroll', () => {
-    if (playlistContainer.scrollTop > 100) { // 100px aşağı kaydırıldığında göster
+    if (playlistContainer.scrollTop > 100) { 
         scrollToTopButton.classList.add('show');
     } else {
         scrollToTopButton.classList.remove('show');
@@ -51,6 +51,12 @@ playlistContainer.addEventListener('scroll', () => {
 });
 
 window.addEventListener('mousemove', (event) => {
+    
+    if (window.innerWidth <= 768) {
+     
+        return; 
+    }
+
     const mouseX = event.clientX;
     const playlistRect = playlistContainer.getBoundingClientRect();
     const toggleHandleRect = playlistToggleHandle.getBoundingClientRect();

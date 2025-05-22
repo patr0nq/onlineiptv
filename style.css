@@ -97,6 +97,7 @@ body {
     overflow: hidden;
     align-items: center;
     padding-bottom: 18px;
+    height: 100%;
 }
 
 body.playlist-visible .main-content .video-js {
@@ -477,6 +478,7 @@ body.playlist-visible .scroll-to-top.show {
         flex-direction: column; /* Stack video and potentially controls vertically */
         width: 100%;
         padding-bottom: 5px;
+        height: 100%;
     }
 
     body.playlist-visible .main-content .video-js {
@@ -486,7 +488,7 @@ body.playlist-visible .scroll-to-top.show {
     .video-js {
         margin-top: 10px; /* Adjust margin */
         width: 100%; /* Make video player full width on mobile */
-        height: auto; /* Allow height to adjust based on aspect ratio */
+        height: 100% !important; /* Make video player full height on mobile */
     }
 
     #playlist {

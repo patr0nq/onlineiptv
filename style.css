@@ -490,8 +490,7 @@ body.playlist-visible .scroll-to-top.show {
     }
 
     #playlist {
-        width: 85%; /* Make playlist wider */
-        max-width: 350px; /* Set a max-width */
+        width: 100%; /* Make playlist full width on mobile */
         height: 100vh; /* Full height */
         top: 0;
         left: 0;
@@ -529,7 +528,7 @@ body.playlist-visible .scroll-to-top.show {
     }
 
     body.playlist-visible #playlist-toggle-handle {
-        right: calc(85% + 20px); /* Position handle to the right of the open playlist */
+        right: 10px; /* Keep handle on the right edge when playlist is open */
         transform: rotate(180deg); /* Rotate the handle itself */
     }
 

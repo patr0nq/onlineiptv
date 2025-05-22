@@ -97,7 +97,6 @@ body {
     overflow: hidden;
     align-items: center;
     padding-bottom: 18px;
-    height: 100%;
 }
 
 body.playlist-visible .main-content .video-js {
@@ -527,16 +526,16 @@ body.playlist-visible .scroll-to-top.show {
      /* Adjust icon direction based on playlist state */
     #playlist-toggle-handle span {
         transform: rotate(45deg); /* Icon points right when playlist is hidden */
-    }
+     }
 
     body.playlist-visible #playlist-toggle-handle {
         right: 10px; /* Keep handle on the right edge when playlist is open */
         transform: rotate(180deg); /* Rotate the handle itself */
-    }
+     }
 
     body.playlist-visible #playlist-toggle-handle span {
         transform: rotate(-135deg); /* Icon points left when playlist is visible */
-    }
+     }
 
     /* Adjust scroll to top button position for mobile playlist */
     body.playlist-visible .scroll-to-top.show {
@@ -566,9 +565,9 @@ body.playlist-visible .scroll-to-top.show {
     }
 
      #upload-modal .input-group input[type="file"]::file-selector-button {
-         margin-right: 0;
-         margin-bottom: 10px; /* Add space between button and input */
-     }
+          margin-right: 0;
+          margin-bottom: 10px; /* Add space between button and input */
+      }
 
     .scroll-to-top:not(.show) {
         left: 50%;

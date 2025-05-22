@@ -50,23 +50,23 @@ playlistContainer.addEventListener('scroll', () => {
     }
 });
 
-// window.addEventListener('mousemove', (event) => {
-//     const mouseX = event.clientX;
-//     const playlistRect = playlistContainer.getBoundingClientRect();
-//     const toggleHandleRect = playlistToggleHandle.getBoundingClientRect();
+window.addEventListener('mousemove', (event) => {
+    const mouseX = event.clientX;
+    const playlistRect = playlistContainer.getBoundingClientRect();
+    const toggleHandleRect = playlistToggleHandle.getBoundingClientRect();
 
-//     const isNearLeftEdge = mouseX <= 75;
-//     const isOverHandle = mouseX >= toggleHandleRect.left && mouseX <= toggleHandleRect.right &&
-//                          event.clientY >= toggleHandleRect.top && event.clientY <= toggleHandleRect.bottom;
+    const isNearLeftEdge = mouseX <= 75;
+    const isOverHandle = mouseX >= toggleHandleRect.left && mouseX <= toggleHandleRect.right &&
+                         event.clientY >= toggleHandleRect.top && event.clientY <= toggleHandleRect.bottom;
 
-//     if (!body.classList.contains('playlist-visible') && isNearLeftEdge) {
-//         playlistToggleHandle.style.opacity = '1';
-//         playlistToggleHandle.style.pointerEvents = 'auto';
-//     } else if (!body.classList.contains('playlist-visible') && !isNearLeftEdge && !isOverHandle) {
-//          playlistToggleHandle.style.opacity = '0';
-//          playlistToggleHandle.style.pointerEvents = 'none';
-//     }
-// });
+    if (!body.classList.contains('playlist-visible') && isNearLeftEdge) {
+        playlistToggleHandle.style.opacity = '1';
+        playlistToggleHandle.style.pointerEvents = 'auto';
+    } else if (!body.classList.contains('playlist-visible') && !isNearLeftEdge && !isOverHandle) {
+         playlistToggleHandle.style.opacity = '0';
+         playlistToggleHandle.style.pointerEvents = 'none';
+    }
+});
 
 m3uFileInput.addEventListener('change', (event) => {
     closeUploadModal();

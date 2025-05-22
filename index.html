@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M3U Player</title>
-    
+    <!-- Video.js CSS -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="playlist-visible">
+<body>
     <div class="container">
         <div class="main-content">
             <div id="playlist">
-                <div class="playlist-header-container"> 
+                <div class="playlist-header-container"> <!-- Başlık ve butonu sarmalamak için yeni div -->
                     <h2>Kanal Listesi</h2>
-                    
+                    <!-- Yükleme modalını açacak buton buraya taşındı -->
                     <button id="open-upload-modal-button">Yükle</button>
                 </div>
                 <ul>
-                
+                    <!-- Kanal listesi buraya JavaScript ile eklenecek -->
                 </ul>
             </div>
-           
+            <!-- Scroll to Top Button -->
             <button id="scroll-to-top-button" class="scroll-to-top">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
             </button>
@@ -35,26 +35,26 @@
                 </p>
             </video>
         </div>
-      
+        <!-- Kanal listesini açıp kapatmak için çentik/buton -->
         <div id="playlist-toggle-handle">
             <span></span>
         </div>
     </div>
 
-    
+    <!-- Yükleme Modal Yapısı -->
     <div id="modal-overlay">
         <div id="upload-modal">
             <h3>M3U Yükle</h3>
-            <div class="input-group"> 
+            <div class="input-group"> <!-- Modal içindeki input grubu -->
                 <input type="file" id="m3uFileInput" accept=".m3u">
                 <input type="text" id="m3uUrlInput" placeholder="Veya M3U URL'sini buraya yapıştırın">
                 <button id="loadUrlButton">URL'den Yükle</button>
             </div>
-            
+            <!-- İsteğe bağlı: Modalı kapatma butonu eklenebilir -->
         </div>
     </div>
 
-   
+    <!-- Video.js JS -->
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     <!-- Video.js HLS ve DASH desteği -->
     <script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@3.10.0/dist/videojs-http-streaming.min.js"></script>

@@ -186,6 +186,15 @@ body.playlist-visible #playlist {
     margin-left: 0;
     margin-top: 20px;
     transition: margin-left 0.3s ease;
+    position: relative;
+}
+
+.video-js .vjs-tech {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .video-js:-webkit-full-screen {
@@ -274,8 +283,8 @@ body.playlist-visible #playlist {
     border-bottom-right-radius: 8px;
     transition: left 0.3s ease, opacity 0.3s ease;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1; /* Make it always visible on desktop */
+    pointer-events: auto; /* Make it always interactive on desktop */
 }
 
 /* Çentiğin içindeki ikon veya metin */
@@ -292,8 +301,8 @@ body.playlist-visible #playlist {
 /* Liste açıkken çentiğin konumu */
 body.playlist-visible #playlist-toggle-handle {
     left: 300px;
-    opacity: 1;
-    pointer-events: auto;
+    /* opacity: 1;  Already set by default */
+    /* pointer-events: auto; Already set by default */
 }
 
 /* Liste açıkken çentiğin içindeki ikon sola baksın */
@@ -476,6 +485,8 @@ body.playlist-visible .scroll-to-top.show {
 
     .video-js {
         margin-top: 10px; /* Adjust margin */
+        width: 100%; /* Make video player full width on mobile */
+        height: auto; /* Allow height to adjust based on aspect ratio */
     }
 
     #playlist {

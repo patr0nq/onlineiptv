@@ -1,4 +1,13 @@
-const player = videojs('my-video');
+const player = videojs('my-video', {
+    controls: true,
+    fluid: true,
+    controlBar: {
+        fullscreenToggle: true,
+        volumePanel: {
+            inline: false // Mobil cihazlarda ses kontrolünü daha iyi hale getirir
+        }
+    }
+});
 
 const defaultM3uUrl = 'https://raw.githubusercontent.com/Sakubaba00/saku/refs/heads/main/playlist1.m3u';
 

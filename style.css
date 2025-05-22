@@ -595,4 +595,19 @@ body.playlist-visible .scroll-to-top.show {
         right: 0;
         width: 100%;
     }
+
+    /* Mobil için ana içerik ve video oynatıcı özel stilleri */
+    .main-content {
+        overflow: visible !important; /* Kontrollerin kırpılmasını önle */
+        padding: 0 !important; /* Mutlak konumlandırılmış kontrollerle çakışabilecek dolguyu kaldır */
+        display: flex;
+        flex-direction: column; /* Oynatıcının dikey olarak genişlemesini sağla */
+        align-items: stretch; /* Çocuk öğelerin (oynatıcı) genişliği doldurmasını sağla */
+    }
+
+    .main-content .video-js {
+        width: 100% !important;
+        height: auto !important; /* fluid:true ile çalışır, en boy oranına göre yüksekliği ayarlar */
+        flex-grow: 1; /* Oynatıcının mevcut dikey alanı kaplamasına izin ver */
+    }
 }

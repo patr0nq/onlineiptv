@@ -4,7 +4,7 @@ const player = videojs('my-video', {
     controlBar: {
         fullscreenToggle: true,
         volumePanel: {
-            inline: false // Mobil cihazlarda ses kontrolünü daha iyi hale getirir
+            inline: false
         }
     }
 });

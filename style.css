@@ -202,29 +202,33 @@ body.playlist-visible #playlist {
     height: 100% !important;
     margin-left: 0 !important;
 }
-
 .video-js:-moz-full-screen {
     width: 100% !important;
     height: 100% !important;
     margin-left: 0 !important;
 }
-
 .video-js:-ms-fullscreen {
     width: 100% !important;
     height: 100% !important;
     margin-left: 0 !important;
 }
-
 .video-js:full-screen {
     width: 100% !important;
     height: 100% !important;
     margin-left: 0 !important;
 }
-
 .vjs-fullscreen .video-js {
     width: 100% !important;
     height: 100% !important;
     margin-left: 0 !important;
+}
+
+
+.video-js .vjs-control-bar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important; 
 }
 
 #playlist li.copied {
@@ -264,7 +268,7 @@ body.playlist-visible #playlist {
     margin-left: 320px;
 }
 
-/* Kanal listesi açma/kapama çentiği */
+
 #playlist-toggle-handle {
     position: fixed;
     top: 50%;
@@ -283,11 +287,11 @@ body.playlist-visible #playlist {
     border-bottom-right-radius: 8px;
     transition: left 0.3s ease, opacity 0.3s ease;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-    opacity: 1; /* Make it always visible on desktop */
-    pointer-events: auto; /* Make it always interactive on desktop */
+    opacity: 1; 
+    pointer-events: auto; 
 }
 
-/* Çentiğin içindeki ikon veya metin */
+
 #playlist-toggle-handle span {
     display: block;
     width: 8px;
@@ -298,31 +302,31 @@ body.playlist-visible #playlist {
     transition: transform 0.3s ease;
 }
 
-/* Liste açıkken çentiğin konumu */
+
 body.playlist-visible #playlist-toggle-handle {
     left: 300px;
-    /* opacity: 1;  Already set by default */
-    /* pointer-events: auto; Already set by default */
+    
+    
 }
 
-/* Liste açıkken çentiğin içindeki ikon sola baksın */
+
 body.playlist-visible #playlist-toggle-handle span {
     transform: rotate(45deg);
 }
 
-/* Yükleme Modal Stilleri */
+
 #modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah arka plan */
+    background-color: rgba(0, 0, 0, 0.7); 
     display: flex;
-    justify-content: center; /* Paneli yatayda ortala */
-    align-items: center; /* Paneli dikeyde ortala */
-    z-index: 1000; /* Diğer her şeyin üzerinde */
-    visibility: hidden; /* Başlangıçta gizli */
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+    visibility: hidden; 
     opacity: 0;
     transition: visibility 0.3s ease, opacity 0.3s ease;
 }
@@ -338,9 +342,9 @@ body.playlist-visible #playlist-toggle-handle span {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     text-align: center;
-    max-width: 400px; /* Maksimum genişlik */
+    max-width: 400px; 
     width: 90%;
-    position: relative; /* İçindeki elemanlar için */
+    position: relative; 
 }
 
 #upload-modal h3 {
@@ -381,24 +385,24 @@ body.playlist-visible #playlist-toggle-handle span {
     background-color: #0056b3;
 }
 
-/* Başlıktaki yükle butonu stili */
+
 #open-upload-modal-button {
     padding: 5px 15px;
     border-radius: 4px;
     border: 1px solid #555;
     font-size: 1rem;
-    background-color: #333; /* Koyu tema rengi */
+    background-color: #333; 
     color: #f4f4f4;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: auto; /* Başlığın sağına hizala */
+    margin-left: auto; 
 }
 
 #open-upload-modal-button:hover {
     background-color: #555;
 }
 
-/* Playlist başlık ve butonunu sarmalayan div için stil */
+
 .playlist-header-container {
     display: flex;
     justify-content: space-between;
@@ -406,7 +410,7 @@ body.playlist-visible #playlist-toggle-handle span {
     margin-bottom: 10px;
 }
 
-/* Playlist içindeki Yükle butonu stili */
+
 #playlist #open-upload-modal-button {
     padding: 5px 10px;
     border-radius: 4px;
@@ -423,13 +427,13 @@ body.playlist-visible #playlist-toggle-handle span {
     background-color: #555;
 }
 
-/* Scroll to Top Button Stilleri */
+
 .scroll-to-top {
     position: absolute;
     bottom: 0px;
     left: 120px;
     transform: none;
-    background-color: rgba(0, 0, 0, 0.6); /* Hafif şeffaf arka plan */
+    background-color: rgba(0, 0, 0, 0.6); 
     color: #f4f4f4;
     border: none;
     border-radius: 50%;
@@ -439,14 +443,14 @@ body.playlist-visible #playlist-toggle-handle span {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    opacity: 0; /* Başlangıçta gizli */
-    visibility: hidden; /* Başlangıçta gizli */
+    opacity: 0; 
+    visibility: hidden; 
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 102; /* Çentiğin üzerinde */
+    z-index: 102; 
 }
 
 .scroll-to-top:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Daha koyu arka plan */
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .scroll-to-top svg {
@@ -454,43 +458,40 @@ body.playlist-visible #playlist-toggle-handle span {
     height: 16px;
 }
 
-/* Playlist açıkken ve scroll aşağıdayken butonu göster */
+
 body.playlist-visible .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Playlist gizliyken scroll butonu gizle - Bu kural artık .show kuralı ile birleşti */
-/* body:not(.playlist-visible) .scroll-to-top { */
-/*     opacity: 0; */
-/*     visibility: hidden; */
-/* } */
 
-/* Add responsive styles */
+
+
+
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column; 
         padding: 5px;
     }
 
     .main-content {
-        flex-direction: column; /* Stack video and potentially controls vertically */
+        flex-direction: column; 
         width: 100%;
         padding-bottom: 5px;
-        /* height: 100%; */ /* Allow content to determine height */
-        overflow-y: auto; /* Allow scrolling if content overflows */
+        
+        overflow-y: auto; 
     }
 
     body.playlist-visible .main-content .video-js {
-        margin-left: 0; /* Remove margin shift on mobile */
+        margin-left: 0; 
     }
 
     .video-js {
-        margin-top: 10px; /* Adjust margin */
-        width: 100%; /* Make video player full width on mobile */
-        /* height: 100% !important; */ /* Removed fixed height for better portrait scaling */
-        aspect-ratio: 16 / 9; /* Maintain aspect ratio, adjust if needed */
-        max-height: calc(100vh - 80px); /* Limit height to prevent overflow, adjust 80px based on other elements */
+        margin-top: 10px; 
+        width: 100%; 
+        
+        aspect-ratio: 16 / 9; 
+        max-height: calc(100vh - 80px); 
     }
 
     .video-js.vjs-fullscreen {
@@ -499,13 +500,13 @@ body.playlist-visible .scroll-to-top.show {
     }
 
     #playlist {
-        width: 100%; /* Make playlist full width on mobile */
-        height: 100vh; /* Full height */
+        width: 100%; 
+        height: 100vh; 
         top: 0;
         left: 0;
-        transform: translateX(-100%); /* Still slide from left */
+        transform: translateX(-100%); 
         opacity: 0;
-        /* Keep existing transition */
+        
     }
 
     body.playlist-visible #playlist {
@@ -513,52 +514,52 @@ body.playlist-visible .scroll-to-top.show {
         opacity: 1;
     }
 
-    /* Adjust toggle handle for mobile */
+    
     #playlist-toggle-handle {
          position: fixed;
-         top: 10px; /* Position at the top */
+         top: 10px; 
          left: auto;
-         right: 10px; /* Position on the right */
+         right: 10px; 
          transform: translateY(0);
-         width: 40px; /* Make handle larger for touch */
+         width: 40px; 
          height: 40px;
-         border-radius: 50%; /* Make it round */
-         background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
-         z-index: 102; /* Above playlist */
-         opacity: 1; /* Always visible on mobile */
-         pointer-events: auto; /* Always interactive on mobile */
+         border-radius: 50%; 
+         background-color: rgba(0, 0, 0, 0.5); 
+         z-index: 102; 
+         opacity: 1; 
+         pointer-events: auto; 
          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
          transition: right 0.3s ease;
     }
 
-     /* Adjust icon direction based on playlist state */
+     
     #playlist-toggle-handle span {
-        transform: rotate(45deg); /* Icon points right when playlist is hidden */
+        transform: rotate(45deg); 
      }
 
     body.playlist-visible #playlist-toggle-handle {
-        right: 10px; /* Keep handle on the right edge when playlist is open */
-        transform: rotate(180deg); /* Rotate the handle itself */
+        right: 10px; 
+        transform: rotate(180deg); 
      }
 
     body.playlist-visible #playlist-toggle-handle span {
-        transform: rotate(-135deg); /* Icon points left when playlist is visible */
+        transform: rotate(-135deg); 
      }
 
-    /* Adjust scroll to top button position for mobile playlist */
+    
     body.playlist-visible .scroll-to-top.show {
-         left: 50%; /* Center horizontally relative to playlist */
-         transform: translateX(-50%); /* Adjust for centering */
-         bottom: 10px; /* Position from the bottom */
+         left: 50%; 
+         transform: translateX(-50%); 
+         bottom: 10px; 
     }
 
-    /* Hide the mousemove listener handle opacity control on mobile */
+    
     body:not(.playlist-visible) #playlist-toggle-handle {
          opacity: 1 !important;
          pointer-events: auto !important;
     }
 
-    /* Adjust modal input group for better stacking on mobile */
+    
     #upload-modal .input-group {
         flex-direction: column;
         gap: 15px;
@@ -567,14 +568,14 @@ body.playlist-visible .scroll-to-top.show {
     #m3uFileInput,
     #m3uUrlInput,
     #loadUrlButton {
-        width: calc(100% - 20px); /* Full width minus padding */
+        width: calc(100% - 20px); 
         box-sizing: border-box;
-        margin-left: 0; /* Remove left margin */
+        margin-left: 0; 
     }
 
      #upload-modal .input-group input[type="file"]::file-selector-button {
           margin-right: 0;
-          margin-bottom: 10px; /* Add space between button and input */
+          margin-bottom: 10px; 
       }
 
     .scroll-to-top:not(.show) {
@@ -584,30 +585,29 @@ body.playlist-visible .scroll-to-top.show {
     }
 
     .video-js .vjs-control-bar {
-        display: flex !important; /* Ensure it's displayed */
-        visibility: visible !important; /* Ensure it's visible */
-        opacity: 1 !important; /* Ensure it's not transparent */
-        pointer-events: auto !important; /* Ensure it's interactive */
-        z-index: 2147483647 !important; /* Max z-index, just in case */
-        position: absolute; /* Ensure it's positioned correctly within the player */
+        display: flex !important; 
+        visibility: visible !important; 
+        opacity: 1 !important; 
+        pointer-events: auto !important; 
+        position: absolute; 
         bottom: 0;
         left: 0;
         right: 0;
         width: 100%;
     }
 
-    /* Mobil için ana içerik ve video oynatıcı özel stilleri */
+    
     .main-content {
-        overflow: visible !important; /* Kontrollerin kırpılmasını önle */
-        padding: 0 !important; /* Mutlak konumlandırılmış kontrollerle çakışabilecek dolguyu kaldır */
+        overflow: visible !important; 
+        padding: 0 !important; 
         display: flex;
-        flex-direction: column; /* Oynatıcının dikey olarak genişlemesini sağla */
-        align-items: stretch; /* Çocuk öğelerin (oynatıcı) genişliği doldurmasını sağla */
+        flex-direction: column; 
+        align-items: stretch; 
     }
 
     .main-content .video-js {
         width: 100% !important;
-        height: auto !important; /* fluid:true ile çalışır, en boy oranına göre yüksekliği ayarlar */
-        flex-grow: 1; /* Oynatıcının mevcut dikey alanı kaplamasına izin ver */
+        height: auto !important; 
+        flex-grow: 1; 
     }
 }

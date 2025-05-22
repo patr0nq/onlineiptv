@@ -456,3 +456,107 @@ body.playlist-visible .scroll-to-top.show {
 /*     opacity: 0; */
 /*     visibility: hidden; */
 /* } */
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 5px;
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack video and potentially controls vertically */
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+    body.playlist-visible .main-content .video-js {
+        margin-left: 0; /* Remove margin shift on mobile */
+    }
+
+    .video-js {
+        margin-top: 10px; /* Adjust margin */
+    }
+
+    #playlist {
+        width: 85%; /* Make playlist wider */
+        max-width: 350px; /* Set a max-width */
+        height: 100vh; /* Full height */
+        top: 0;
+        left: 0;
+        transform: translateX(-100%); /* Still slide from left */
+        opacity: 0;
+        /* Keep existing transition */
+    }
+
+    body.playlist-visible #playlist {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Adjust toggle handle for mobile */
+    #playlist-toggle-handle {
+         position: fixed;
+         top: 10px; /* Position at the top */
+         left: auto;
+         right: 10px; /* Position on the right */
+         transform: translateY(0);
+         width: 40px; /* Make handle larger for touch */
+         height: 40px;
+         border-radius: 50%; /* Make it round */
+         background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+         z-index: 102; /* Above playlist */
+         opacity: 1; /* Always visible on mobile */
+         pointer-events: auto; /* Always interactive on mobile */
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+         transition: right 0.3s ease;
+    }
+
+     /* Adjust icon direction based on playlist state */
+    #playlist-toggle-handle span {
+        transform: rotate(45deg); /* Icon points right when playlist is hidden */
+    }
+
+    body.playlist-visible #playlist-toggle-handle {
+        right: calc(85% + 20px); /* Position handle to the right of the open playlist */
+        transform: rotate(180deg); /* Rotate the handle itself */
+    }
+
+    body.playlist-visible #playlist-toggle-handle span {
+        transform: rotate(-135deg); /* Icon points left when playlist is visible */
+    }
+
+    /* Adjust scroll to top button position for mobile playlist */
+    body.playlist-visible .scroll-to-top.show {
+         left: 50%; /* Center horizontally relative to playlist */
+         transform: translateX(-50%); /* Adjust for centering */
+         bottom: 10px; /* Position from the bottom */
+    }
+
+    /* Hide the mousemove listener handle opacity control on mobile */
+    body:not(.playlist-visible) #playlist-toggle-handle {
+         opacity: 1 !important;
+         pointer-events: auto !important;
+    }
+
+    /* Adjust modal input group for better stacking on mobile */
+    #upload-modal .input-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #m3uFileInput,
+    #m3uUrlInput,
+    #loadUrlButton {
+        width: calc(100% - 20px); /* Full width minus padding */
+        box-sizing: border-box;
+        margin-left: 0; /* Remove left margin */
+    }
+
+     #upload-modal .input-group input[type="file"]::file-selector-button {
+         margin-right: 0;
+         margin-bottom: 10px; /* Add space between button and input */
+     }
+
+
+}

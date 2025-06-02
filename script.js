@@ -9,7 +9,7 @@ const player = videojs('my-video', {
     }
 });
 
-const defaultM3uUrl = 'https://raw.githubusercontent.com/Sakubaba00/saku/refs/heads/main/playlist1.m3u';
+const defaultM3uUrl = 'https://raw.githubusercontent.com/Ahmetgayayiyedum/ssaku/refs/heads/main/playlist1.m3u';
 
 const m3uFileInput = document.getElementById('m3uFileInput');
 const m3uUrlInput = document.getElementById('m3uUrlInput');

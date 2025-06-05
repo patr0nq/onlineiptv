@@ -9,7 +9,7 @@ const player = videojs('my-video', {
     }
 });
 
-const defaultM3uUrl = 'https://lemonchiffon-dotterel-347603.hostingersite.com/kablotv/kablotv.m3u';
+const defaultM3uUrl = 'https://raw.githubusercontent.com/patr0nq/link/refs/heads/main/sakultah.m3u';
 
 const m3uFileInput = document.getElementById('m3uFileInput');
 const m3uUrlInput = document.getElementById('m3uUrlInput');
